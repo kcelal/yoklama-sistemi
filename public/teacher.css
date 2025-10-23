@@ -1,0 +1,464 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* YENİ: Öğeleri alt alta diz */
+    align-items: center;    /* YENİ: Öğeleri yatayda ortala */
+    padding: 20px;
+    /* justify-content: center; <-- Buna artık gerek yok */
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h2 {
+    color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#setup-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* QR Kod Alanı */
+.qr-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#qrcode {
+    border: 5px solid #eee;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Katılımcı Listesi */
+#attendee-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+#attendee-list li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#attendee-list li:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+#attendee-list li:last-child {
+    border-bottom: none;
+}
+/* ... dosyanızın mevcut stilleri ... */
+
+/* YENİ: Kapatma Butonu Stili */
+button.close-btn {
+    background-color: #dc3545; /* Kırmızı */
+    margin-top: -10px; /* QR kod ile liste arasına yerleşsin */
+    margin-bottom: 20px;
+}
+
+button.close-btn:hover {
+    background-color: #c82333;
+}
+
+button.close-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* YENİ: QR Kod Overlay Stili */
+.qr-container {
+    position: relative; /* Overlay'in buna göre konumlanması için */
+}
+
+#qrcode-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px; /* qrcode div'i ile aynı */
+}
+
+#qrcode-overlay p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #dc3545;
+}
+/* ... (dosyanın geri kalan stilleri) ... */
+
+/* YENİ: Dışa Aktarma Butonu Stili */
+button.export-btn {
+    background-color: #28a745; /* Yeşil */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+button.export-btn:hover {
+    background-color: #218838;
+}
+
+  
+/* YENİ: Sayfa Başlığı (Header) Stilleri */
+/* YENİ: Sayfa Başlığı (Header) Stilleri */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto 20px auto; /* DÜZELTİLDİ: Alt boşluk 20px oldu */
+    padding: 10px;
+}
+
+#welcome-message {
+    color: #333;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+button.logout-btn {
+    background-color: #6c757d; /* Gri */
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto; /* Tam genişlik olmasın */
+}
+button.logout-btn:hover {
+    background-color: #5a6268;
+}
+
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Ana Sayfa (Dashboard) Stilleri */
+
+.dashboard-section {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.dashboard-section p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* "Yeni Yoklama Sayfasına Git" butonu */
+.button-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+/* Geçmiş Oturumlar Listesi Stilleri */
+#past-sessions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#past-sessions-list li {
+    display: flex;
+    flex-wrap: wrap; /* Küçük ekranlar için */
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+#past-sessions-list li strong {
+    font-size: 1.2em;
+    color: #333;
+    flex-basis: 100%; /* Mobil için tam genişlik */
+    margin-bottom: 5px;
+}
+
+#past-sessions-list li small {
+    color: #777;
+    flex-basis: 100%; /* Mobil için tam genişlik */
+    margin-bottom: 10px;
+}
+
+#past-sessions-list li .count {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+#past-sessions-list li .status-active {
+    color: #28a745; /* Yeşil */
+    font-weight: bold;
+}
+
+#past-sessions-list li .status-closed {
+    color: #dc3545; /* Kırmızı */
+    font-weight: bold;
+}
+
+/* (Tablet/Masaüstü için) Listeyi yan yana sığdır */
+@media (min-width: 600px) {
+    #past-sessions-list li strong {
+        flex-basis: 40%;
+    }
+    #past-sessions-list li small {
+        flex-basis: 30%;
+        text-align: left;
+        margin-bottom: 0;
+    }
+}
+/* YENİ: Geri Dön Linki Stili */
+.page-header .back-link {
+    font-size: 1.1em;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.page-header .back-link:hover {
+    text-decoration: underline;
+}
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Login ve Teacher Sayfaları için Ortak Başlık Stilleri */
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#school-logo {
+    max-width: 100px; /* Logo boyutunu buradan ayarlayabilirsiniz */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#school-name {
+    margin: 0;
+    color: #444;
+    font-size: 1.5em;
+    line-height: 1.3; /* Üniversite ismi 2 satıra sığarsa diye */
+}
+
+/* Mevcut h1 (Öğretmen Girişi / Yoklama Paneli) başlığını
+   biraz küçültüp okul adıyla uyumlu hale getirelim */
+.container h1 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Ana sayfadaki geçmiş kayıtların tıklanabilir görünmesi */
+#past-sessions-list li {
+    transition: background-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+#past-sessions-list li:hover {
+    background-color: #fcfcfc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* YENİ: Oturum Detay Sayfası Stilleri */
+#session-info-box h1 {
+    font-size: 1.8em; /* Ders adını daha büyük yap */
+    margin-bottom: 5px;
+}
+#session-info-box p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Detaydaki katılımcı listesi */
+#detail-attendee-list {
+    list-style-type: decimal; /* 1. 2. 3. diye numaralandır */
+    padding-left: 20px;
+}
+#detail-attendee-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+#detail-attendee-list li strong {
+    flex-basis: 40%;
+    color: #333;
+}
+#detail-attendee-list li span {
+    flex-basis: 20%;
+    color: #777;
+}
+#detail-attendee-list li small {
+    flex-basis: 30%;
+    color: #777;
+    text-align: right;
+}
+
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Kayıt sayfası mesaj stilleri */
+#reg-message.success {
+    color: green;
+}
+#reg-message.error {
+    color: red;
+}
+
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Ana sayfadaki liste içi kapatma butonu */
+.status-container {
+    flex-basis: 15%;
+    text-align: right;
+}
+
+button.list-close-btn {
+    background-color: #dc3545; /* Kırmızı */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+button.list-close-btn:hover {
+    background-color: #c82333;
+}
+
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Silme Butonu Stili (Tehlike) */
+button.delete-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #dc3545; /* Kırmızı Metin */
+    background-color: #fff; /* Beyaz Arkaplan */
+    border: 2px solid #dc3545; /* Kırmızı Çerçeve */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button.delete-btn:hover {
+    background-color: #dc3545; /* Kırmızı Arkaplan */
+    color: #fff; /* Beyaz Metin */
+}
+
+/* ... dosyanızdaki mevcut stillerin sonuna ... */
+
+/* YENİ: Admin Paneli Tablo Stilleri */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+.admin-table th {
+    background-color: #f4f4f4;
+}
+.admin-table .edit-btn-table {
+    background-color: #ffc107; color: black;
+    border: none; padding: 5px 8px; border-radius: 4px; cursor: pointer;
+    font-size: 0.9em; margin-right: 5px;
+}
+.admin-table .delete-btn-table {
+    background-color: #dc3545; color: white;
+    border: none; padding: 5px 8px; border-radius: 4px; cursor: pointer;
+    font-size: 0.9em;
+}
+#edit-form-container {
+    display: none; /* Başlangıçta gizli */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}

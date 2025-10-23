@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Süper Admin Paneli</title>
+    <link rel="stylesheet" href="teacher.css">
+    <style>
+        /* Bu sayfaya özel stiller */
+        .admin-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .admin-table th, .admin-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .admin-table th {
+            background-color: #f4f4f4;
+        }
+        .admin-table .edit-btn-table {
+            background-color: #ffc107; color: black;
+            border: none; padding: 5px 8px; border-radius: 4px; cursor: pointer;
+        }
+        .admin-table .delete-btn-table {
+            background-color: #dc3545; color: white;
+            border: none; padding: 5px 8px; border-radius: 4px; cursor: pointer;
+        }
+        #edit-form-container {
+            display: none; /* Başlangıçta gizli */
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        #edit-form-container h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container container">
+        <div class="header">
+            <h2 id="school-name">Öğretmen Yönetim Paneli</h2>
+        </div>
+        
+        <div class="form-group">
+            <label for="admin-secret">Sistem Gizli Anahtarı:</label>
+            <input type="password" id="admin-secret" style="width: 100%; box-sizing: border-box;">
+        </div>
+        <button id="load-teachers-btn">Öğretmenleri Yükle</button>
+        <p id="admin-message" style="font-weight: bold; text-align: center;"></p>
+
+        <hr style="border: 1px solid #eee; margin: 20px 0;">
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad Soyad</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Eylemler</th>
+                </tr>
+            </thead>
+            <tbody id="teachers-list-body">
+                <tr><td colspan="4">Lütfen gizli anahtarı girip "Yükle" butonuna basın.</td></tr>
+            </tbody>
+        </table>
+
+        <div id="edit-form-container" class="dashboard-section">
+            <h2 id="edit-form-title">Öğretmeni Düzenle</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="edit-fullname">Ad Soyad:</label>
+                    <input type="text" id="edit-fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-username">Kullanıcı Adı:</label>
+                    <input type="text" id="edit-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-password">Yeni Şifre (Boş bırakırsanız değişmez):</label>
+                    <input type="password" id="edit-password">
+                </div>
+                <button type="submit" id="update-teacher-btn">Güncelle</button>
+                <button type="button" id="cancel-edit-btn" class="close-btn" style="width: auto; margin-top: 10px;">İptal</button>
+            </form>
+        </div>
+
+    </div>
+    
+    <script src="admin-paneli.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Öğretmen Kaydı</title>
+    <link rel="stylesheet" href="teacher.css">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { max-width: 450px; }
+        /* Başarı mesajı için yeşil stil */
+        #reg-message.success { color: green; }
+        /* Hata mesajı için kırmızı stil */
+        #reg-message.error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <img src="togu.png" alt="Okul Logosu" id="school-logo">
+            <h2 id="school-name">Yeni Öğretmen Kayıt Portalı</h2>
+        </div>
+
+        <form id="register-form">
+            <div class="form-group">
+                <label for="reg-fullname">Yeni Öğretmenin Adı Soyadı:</label>
+                <input type="text" id="reg-fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-username">Yeni Öğretmenin Kullanıcı Adı:</label>
+                <input type="text" id="reg-username" autocomplete="new-password" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-password">Yeni Öğretmenin Şifresi:</label>
+                <input type="password" id="reg-password" autocomplete="new-password" required>
+            </div>
+            <hr style="border: 1px solid #eee; margin: 20px 0;">
+            <div class="form-group">
+                <label for="reg-secret">Gizli Kayıt Anahtarı:</label>
+                <input type="password" id="reg-secret" required>
+            </div>
+
+            <button type="submit" id="register-button">Yeni Öğretmeni Kaydet</button>
+            <p id="reg-message" style="text-align: center; margin-top: 10px; font-weight: bold;"></p>
+        </form>
+    </div>
+    
+    <script src="portal-yonetim-kayit.js"></script>
+</body>
+</html>

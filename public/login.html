@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğretmen Girişi</title>
+    <link rel="stylesheet" href="teacher.css">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { max-width: 400px; }
+        .show-password-container {
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <img src="togu.png" alt="Okul Logosu" id="school-logo">
+            <h2 id="school-name">Tokat Gaziosmanpaşa Üniversitesi - Pazar MYO</h2>
+        </div>
+
+        <h1>Öğretmen Girişi</h1>
+        
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı:</label>
+                <input type="text" id="username" name="username" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password" autocomplete="current-password">
+            </div>
+
+            <div class="show-password-container">
+                <input type="checkbox" id="show-password" style="vertical-align: middle;">
+                <label for="show-password" style="vertical-align: middle; cursor: pointer;">Şifreyi Göster</label>
+            </div>
+
+            <button type="submit" id="login-button">Giriş Yap</button>
+            <p id="login-message" style="color: red; text-align: center; margin-top: 10px;"></p>
+        </form> </div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğretmen Paneli - Yoklama</title>
+    <link rel="stylesheet" href="teacher.css">
+    
+</head>
+
+<body>
+
+    <div class="page-header">
+        <a href="/dashboard.html" class="back-link">&larr; Ana Sayfa</a>
+        <h3 id="welcome-message">Yükleniyor...</h3>
+        <button id="logout-button" class="logout-btn">Çıkış Yap</button>
+    </div>
+
+    <div class="container">
+        <h1>Yoklama Paneli</h1>
+    
+        <div id="session-setup">
+            <div class="form-group">
+                <label for="course-name">Ders Adı:</label>
+                <input type="text" id="course-name" placeholder="örn: Yazılım Mimarisi">
+            </div>
+            <button id="start-button">Yoklamayı Başlat</button>
+            <p id="setup-message"></p>
+        </div>
+
+        <div id="session-display" style="display: none;">
+            <h2 id="display-course-name"></h2>
+            <p>Öğrencilerin yoklamaya katılması için QR kodu okutun.</p>
+            
+            <div class="qr-container">
+                <div id="qrcode"></div>
+                <div id="qrcode-overlay" style="display: none;">
+                    <p>YOKLAMA KAPATILDI</p>
+                </div>
+            </div>
+            
+            <button id="close-button" class="close-btn">Yoklamayı Kapat</button>
+            <button id="export-button" class="export-btn">Excel Olarak Dışa Aktar (.xlsx)</button>
+            
+            <h3>Katılımcı Listesi (<span id="attendee-count">0</span>)</h3>
+            <ul id="attendee-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="teacher.js"></script>
+</body>
+</html>

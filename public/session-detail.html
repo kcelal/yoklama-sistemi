@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oturum Detayları</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+    
+    <div class="page-header">
+        <a href="/dashboard.html" class="back-link">&larr; Ana Sayfa</a>
+        <h3 id="welcome-message">Yükleniyor...</h3>
+        <button id="logout-button" class="logout-btn">Çıkış Yap</button>
+    </div>
+
+    <div class="container">
+        
+        <div id="session-info-box" class="dashboard-section">
+            <h1 id="course-name">Ders Yükleniyor...</h1>
+            <p id="course-date"></p>
+            <p id="course-status"></p>
+            <button id="export-button" class="export-btn">Bu Dersi Excel Olarak Dışa Aktar</button>
+            
+    
+            <button id="detail-close-button" class="close-btn" style="display: none; margin-top: 10px;">
+                Bu Yoklama Oturumunu Kapat
+            </button>
+            <button id="delete-session-button" class="delete-btn" style="margin-top: 10px;">
+        Bu Dersi Kalıcı Olarak Sil
+    </button>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Katılımcı Listesi (<span id="attendee-count">0</span>)</h2>
+            <ul id="detail-attendee-list">
+                <li>Yükleniyor...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="session-detail.js"></script>
+</body>
+</html>
