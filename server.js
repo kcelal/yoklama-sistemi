@@ -16,7 +16,7 @@ const SCHOOL_LOCATION = { latitude: 40.32770084941743, longitude: 36.52636843116
 const MAX_DISTANCE_METERS = 200; 
 
 // --- VERİTABANI BAĞLANTISI ---
-const db = new sqlite3.Database('./yoklama.db', (err) => {
+const db = new sqlite3.Database('/var/data/yoklama.db', (err) => {
     if (err) return console.error('Veritabanına bağlanırken hata:', err.message);
     
     console.log('SQLite veritabanına başarıyla bağlanıldı.');
